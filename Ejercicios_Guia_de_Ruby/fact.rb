@@ -1,4 +1,4 @@
-	def fact (n)
+	def fact(n)
 		if n == 0
 			1
 		else
@@ -6,4 +6,4 @@
 		end
 	end
 
-	print fact (ARGV [0].to_i), "\n"
+	print fact(ARGV[0].to_i), "\n"
