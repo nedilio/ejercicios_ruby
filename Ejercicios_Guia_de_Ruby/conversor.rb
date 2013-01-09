@@ -27,7 +27,6 @@ def calculo(opcion)
 		while $resp == "y" || $resp == "Y"
 			inicio()
 		end
-		puts "Gracias por preferirnos"
 
 end
 
