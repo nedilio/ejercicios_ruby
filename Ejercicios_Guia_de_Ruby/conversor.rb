@@ -13,7 +13,7 @@ end
 
 def calculo(opcion)
 	if opcion == "1"
-			print "Introduzca el valor"
+			print "Introduzca el valor "
 			grado = STDIN.gets.chomp
 			fahrAcent(grado.to_i)	
 	elsif opcion == "2"
@@ -23,7 +23,7 @@ def calculo(opcion)
 	end
 
 		print "Desea Continuar? "
-		resp = STDIN.gets.chomp	
+		$resp = STDIN.gets.chomp	
 		while $resp == "y" || $resp == "Y"
 			inicio()
 		end
@@ -38,8 +38,6 @@ def inicio ()
 	opcion = STDIN.gets.chomp
 	calculo(opcion)
 end
-
-
 
 inicio()
 
