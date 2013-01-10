@@ -10,7 +10,8 @@ end
 puts suma
 
 array2.each do |y|
-	print " #{y} #{ y % 2 == 0 ? " Par" : " Impar"}"
+	puts " #{y} #{ y % 2 == 0 ? " Par" : " Impar"}"
+	print
 end
 
 

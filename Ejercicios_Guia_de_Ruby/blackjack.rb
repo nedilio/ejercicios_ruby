@@ -58,8 +58,8 @@ def Hand
 		end
 
 	def printHand
-		
 		puts "You have in hand "
-
+		cards.each do |card|
+			puts "#{getHand} "
 
 
