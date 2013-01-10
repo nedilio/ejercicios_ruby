@@ -1,3 +1,4 @@
+
 class Card 
 	def initialize (suit, numb)
 		@suit = suit
@@ -5,7 +6,8 @@ class Card
 	end
 
 	def getSuit 
-		return @suit
+		suits = %w{ Corazones Treboles Picas Diamantes}
+		return suits[@suit]
 	end
 
 	def getNumb
@@ -25,14 +27,15 @@ class Card
 	end
 
 	def deal
-		s = rand(4)+1
+		s = rand(4)
 
 		n = rand(13)+1
 
 		return Card.new(s,n)
 	end
 
-def Hand 
+
+class Hand 
 	cards = []
 	cards << deal
 	cards << deal
@@ -58,8 +61,46 @@ def Hand
 		end
 
 	def printHand
-		puts "You have in hand "
+		puts "Tu mano es: "
 		cards.each do |card|
-			puts "#{getHand} "
+			puts "#{card.getNumb} de #{card.getSuit}"
+		end
+	end
+
+	def hitMe 
+		cards << deal
+		return cards
+	end
+
+def playAsDealer
+	dealerHand = Hand.new
+	puts "#{dealerHand.score} "
+	while dealerHand.score < 17
+		dealerHand.hitMe
+		dealerHand.printHand
+	end
+	dealerHand.printHand
+end
+
+
+def playAsUser
+	playerHand = Hand.new
+	puts "Tu mano es #{playerHand.printHand}"
+	puts "Introduzca S o s para tomar otra carta, n para continuar"
+	decision = STDIN.gets.chomp
+	while decision.downcase == "s"
+		playerHand.hitMe
+		puts "Tu mano es #{playerHand.printHand}"
+		puts "Introduzca S o s para tomar otra carta, n para continuar"
+		decision = STDIN.gets.chomp
+	end
+
+	return playerHand
+end
+
+
+
+
+
 
 
