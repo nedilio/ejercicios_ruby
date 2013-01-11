@@ -1,4 +1,3 @@
-
 class Card 
 	def initialize (suit, numb)
 		@suit = suit
@@ -25,7 +24,7 @@ class Card
 	end
 end
 
-def deal
+def reparte
 		s = rand(4)
 
 		n = rand(13)+1
@@ -36,8 +35,8 @@ end
 
 class Hand 
 	cards = []
-	cards << deal
-	cards << deal
+	cards << reparte
+	cards << reparte
 
 	def getHand
 		return cards
@@ -71,7 +70,7 @@ class Hand
 	end
 
 	def hitMe 
-		cards << deal
+		cards << reparte
 		return cards
 	end
 end
